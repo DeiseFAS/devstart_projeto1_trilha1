@@ -1,3 +1,4 @@
+//dados de entrada
 let atletas = [
   {
     nome: "Cesar Abascal",
@@ -19,6 +20,7 @@ let atletas = [
 let nomesDosCompetidores = 0
 let mediaValida = 0
 let notasObtidas = 0
+//laço for para percorrer todos os itens da matriz de objetos
 for (let i = 0; i < atletas.length; i++){
 
   nomesDosCompetidores = atletas.map(function(nomes){
@@ -26,6 +28,7 @@ for (let i = 0; i < atletas.length; i++){
   })
   notasObtidas = atletas.map(function(notas){
       let total = notas.notas
+//método .sort() para ordenar as matrizes      
       total.sort(function(a, b) {
           return a - b;
       });
@@ -37,7 +40,9 @@ for (let i = 0; i < atletas.length; i++){
       case i:
           console.log(`Atleta: ${nomesDosCompetidores[i]}`)
           console.log(`Notas Obtidas: ${notasObtidas[i]}`)
+//método .slice(x, y) para ajudar na seleção dos valores
           let notasAtleta = notasObtidas[i].slice(1, notasObtidas[i].length-1)
+//método .reduce() usando soma          
           let soma = notasAtleta.reduce(function(total,atual){
               return (total + atual)
           })
